@@ -8,6 +8,10 @@ A one-page, single-column fork of [Deedy](https://github.com/deedy/Deedy-Resume)
 
 I love the way [Jake's Resume](https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs) is laid out, but it feels overused. Deedy's resume looks beautiful, but the two-column approach feels outdated. So this is template is my attempt to combine the things I love about each template. Also, I wanted to make it easy to customize the look of the resume. So, I set it up so you can download fonts from [google fonts](https://fonts.google.com/) and quickly give your resume a new look.
 
+## Preview :eyes:
+
+![Preview](https://i.imgur.com/GZX1W4X.png)
+
 ## Quick Start :rocket:
 
 You can build it locally on your machine with `xelatex` or open the project in overleaf. I recommend the latter.
@@ -40,7 +44,7 @@ No resume template can turn into a resume with bad content into a good resume. S
     - Read [CTCI](https://www.amazon.ca/Cracking-Coding-Interview-Programming-Questions/dp/0984782850) for more tips.
 
 2. Learn how to write good bullet points.
-    - Try to turn your points into achievements. Think how is this impressive. [Guide](https://2by22.blog/overhaul-resume-highly-effective-tips/)
+    - Try to turn your points into achievements. Think about your impact. [Guide](https://2by22.blog/overhaul-resume-highly-effective-tips/)
     - Quantify where you can, but estimates are fine but avoid making up numbers
     - Target your resume, make a giant resume that spans multiple pages, filled with all your accomplishment. Then comment out the bullet points, projects and/or experiences you won't use on your "main" resume. Then when you apply to a position, you can quickly adjust your resume to be more targeted. The 2-5 minutes this will take is well-spent.
     - Avoid jargon
