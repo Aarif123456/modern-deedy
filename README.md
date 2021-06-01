@@ -10,7 +10,7 @@ I love the way [Jake's Resume](https://www.overleaf.com/latex/templates/jakes-re
 
 ## Preview :eyes:
 
-![Preview](https://i.imgur.com/GZX1W4X.png)
+![Preview](https://i.imgur.com/4EkdOd5.png)
 
 ## Quick Start :rocket:
 

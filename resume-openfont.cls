@@ -33,72 +33,24 @@
 % Reformatting default sections
 % section
 \titlespacing{\section}{0pt}{0pt}{0pt}
-\titleformat{\section}{
-    \color{headings}
-    \scshape
-    \customMedium
-    \fontsize{16pt}{20pt}
-    \selectfont 
-    \raggedright
-    \uppercase
-} {}{0em}{}
+\titleformat{\section}{\color{headings}\scshape\customMedium\fontsize{16pt}{20pt}\selectfont \raggedright\uppercase} {}{0em}{}
 % subsection
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
-\titleformat{\subsection}{
-    \color{subheadings}
-    \customMedium
-    \fontsize{12pt}{12pt}
-    \selectfont
-    \bfseries
-    \uppercase
-    \normalfont % clear out any loaded font setting
-} {}{0em}{}
+\titleformat{\subsection}{\color{subheadings}\customMedium\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase\normalfont} {}{0em}{}
 
 
 %------------------------------------------------------
 % Subheadings command
-\newcommand{\runsubsection}[1]{
-    \color{subheadings}
-    \customMedium
-    \fontsize{12pt}{12pt}
-    \selectfont
-    \bfseries
-    \uppercase
-    {#1} 
-    \normalfont
-}
+\newcommand{\runsubsection}[1]{\color{subheadings}\customMedium\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase{#1}\normalfont}
 
 % Descriptors command
-\newcommand{\descript}[1]{
-    \color{subheadings}
-    \raggedright
-    \scshape
-    \customMedium
-    \fontsize{11pt}{13pt}
-    \selectfont{#1} 
-    \normalfont
-}
+\newcommand{\descript}[1]{\color{subheadings}\raggedright\scshape\customMedium\fontsize{11pt}{13pt}\selectfont{#1}\normalfont}
 
 % Location command
-\newcommand{\location}[1]{
-    \color{headings}
-    \raggedright
-    \customMedium
-    \fontsize{11pt}{13pt}
-    \selectfont{#1}
-    \normalfont
-}
+\newcommand{\location}[1]{\color{headings}\raggedright\customMedium\fontsize{11pt}{13pt}\selectfont{#1}\normalfont}
 
 % minor sections - like even smaller sub section
-\newcommand{\minorSection}[1]{
-    \color{subheadings}
-    \raggedright
-    \scshape
-    \customMedium
-    \fontsize{11pt}{12pt}
-    \selectfont{#1} 
-    \normalfont
-}
+\newcommand{\minorSection}[1]{\color{subheadings}\raggedright\scshape\customMedium\fontsize{11pt}{12pt}\selectfont{#1}\normalfont}
 
 % Project command
 \newcommand{\Project}[2]{\runsubsection{
@@ -125,32 +77,27 @@
     \setlength{\tabcolsep}{0in}
 }
 
+% Command to simulate new line, to fix spacing glitches
 \newcommand{\fakeNewLine}{\newline \vspace{-\baselineskip}}
 
 % Convenience command to create job positions
 % Parameters: company, position, location, when
-\newcommand{\resumeHeading}[4]{
-    \runsubsection{#1}\descript{| #2}\hfill\location{#3 | #4} \fakeNewLine\NoSpace
-}
+\newcommand{\resumeHeading}[4]{\runsubsection{#1}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine\NoSpace}
 
 % Convenience command for coursework
 % Parameters: courses
-\newcommand{\courseWork}[1]{
-    \semiBold{Coursework:} #1
-}
+\newcommand{\courseWork}[1]{\semiBold{Coursework:} #1}
 
 % Command to create smaller heading: First parameter is the title, second is when you were employed
-\newcommand{\resumeSubheading}[2]{
-    \minorSection{#1}\hfill\location{#2}\fakeNewLine\NoSpace
-}
+\newcommand{\resumeSubheading}[2]{\minorSection{#1}\hfill\location{#2}\fakeNewLine\NoSpace}
 %------------------------------------------------------
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{
-        \vspace{-1mm}
-        \begin{itemize}
-        \itemsep1pt 
-        \parskip1.5pt 
-        \parsep1.5pt
+    \vspace{-1mm}
+    \begin{itemize}
+    \itemsep1pt 
+    \parskip1.5pt 
+    \parsep1.5pt
     }{
         \end{itemize}
         \vspace{-\topsep}
