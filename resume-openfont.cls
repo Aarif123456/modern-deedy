@@ -20,7 +20,7 @@
 % For skills table
 \RequirePackage{enumitem}
 % page setup 
-\RequirePackage{fancyhdr}
+\usepackage[absolute]{textpos}
 \RequirePackage[english]{babel}
 % Using tables like the profile section
 \RequirePackage{tabularx}
@@ -110,21 +110,13 @@
 
 %------------------------------------------------------
 % Section separators command
-\newcommand{\sectionsep}[0]{\vspace{6pt}}
+\newcommand{\sectionsep}[0]{\vspace*{6pt}}
 
 % small separators command
-\newcommand{\smallSep}[0]{\vspace{3pt}}
+\newcommand{\smallSep}[0]{\vspace*{3pt}}
 
 % A shortcut to control spacing
-\newcommand{\NoSpace}{\vspace{-2pt}}
-
-% remove header footer stuff like page numbers 
-\newcommand{\resetHeaderAndFooter}{ 
-    \fancyhf{} 
-    \fancyfoot{}
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
-}
+\newcommand{\NoSpace}{\vspace*{-2pt}}
 
 % Command to align table at the start of the resume
 \newcommand{\alignProfileTable}{
@@ -133,20 +125,13 @@
     \setlength{\tabcolsep}{0in}
 }
 
+\newcommand{\fakeNewLine}{\newline \vspace{-\baselineskip}}
+
 % Convenience command to create job positions
 % Parameters: company, position, location, when
 \newcommand{\resumeHeading}[4]{
-    \runsubsection{#1}\descript{| #2}\hfill \location{#3 | #4}
-    \NoSpace
+    \runsubsection{#1}\descript{| #2}\hfill\location{#3 | #4} \fakeNewLine\NoSpace
 }
-
-% Convenience command for education
-% Parameters: University, date, degree name, location
-\newcommand{\educationHeading}[4]{
-    \runsubsection{#1}\hspace*{\fill} \location{#2}\\
-    \descript{#3}\hspace*{\fill}\location{#4}
-}
-
 
 % Convenience command for coursework
 % Parameters: courses
@@ -156,9 +141,7 @@
 
 % Command to create smaller heading: First parameter is the title, second is when you were employed
 \newcommand{\resumeSubheading}[2]{
-    \smallSep
-    \minorSection{#1}\hspace*{\fill}\location{#2}
-    \NoSpace
+    \minorSection{#1}\hfill\location{#2}\fakeNewLine\NoSpace
 }
 %------------------------------------------------------
 % Bullet Lists with fewer gaps command
