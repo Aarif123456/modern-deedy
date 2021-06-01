@@ -134,11 +134,32 @@
 }
 
 % Convenience command to create job positions
+% Parameters: company, position, location, when
 \newcommand{\resumeHeading}[4]{
     \runsubsection{#1}\descript{| #2}\hfill \location{#3 | #4}
     \NoSpace
 }
 
+% Convenience command for education
+% Parameters: University, date, degree name, location
+\newcommand{\educationHeading}[4]{
+    \runsubsection{#1}\hspace*{\fill} \location{#2}\\
+    \descript{#3}\hspace*{\fill}\location{#4}
+}
+
+
+% Convenience command for coursework
+% Parameters: courses
+\newcommand{\courseWork}[1]{
+    \semiBold{Coursework:} #1
+}
+
+% Command to create smaller heading: First parameter is the title, second is when you were employed
+\newcommand{\resumeSubheading}[2]{
+    \smallSep
+    \minorSection{#1}\hspace*{\fill}\location{#2}
+    \NoSpace
+}
 %------------------------------------------------------
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{
