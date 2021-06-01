@@ -18,6 +18,8 @@ You can build it locally on your machine with `xelatex` or open the project in o
 
 ### Steps to open in Overleaf
 
+[Overleaf template](https://www.overleaf.com/latex/templates/modern-deedy/cxtjgrmpsrvh)
+
 If the template gives you an error after opening. Then you will need to change the compiler.
 
 ![Change Compiler](https://i.imgur.com/ypHmlbX.gif)
