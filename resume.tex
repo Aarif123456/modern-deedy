@@ -1,12 +1,29 @@
 \documentclass[]{resume-openfont}
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
 
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{#1}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine\NoSpace}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\semiBold{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\semiBold{Teacher Assistant (TA):} #1}
+
+% Command to create smaller heading: Parameters: title, when
+\newcommand{\resumeSubheading}[2]{\minorSection{#1}\hfill\location{#2}\fakeNewLine\NoSpace}
+
+%--------------------------------------------------------------
 \begin{document}
 
-%---------------------------------------
-%
+%--------------------------------------------------------------
 %     Profile
-%
-%---------------------------------------
+%--------------------------------------------------------------
 \newcommand{\yourName}{First Last}
 \newcommand{\yourWebsite}{https://abdullaharif.tech}
 \newcommand{\yourEmail}{someEmail@edu.com}
@@ -14,16 +31,15 @@
 \newcommand{\githubUserName}{aarif123456}
 \newcommand{\linkedInUserName}{abdullaharif98}
 
-% Align profile table
-% \alignProfileTable
+\alignProfileTable
 % \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 %     \textbf{\href{\yourWebsite}{\Large \yourName}} & 
 %     Email : \href{mailto:\yourEmail}{\yourEmail}
 %     \\
-%     \href{https://github.com/\githubUserName}{github/\githubUserName} & 
+%     \href{https://github.com/\githubUserName}{GitHub://\githubUserName} & 
 %     Mobile : \yourPhone
 %     \\
-%     \href{https://www.linkedin.com/in/\linkedInUserName}{linkedIn/\linkedInUserName} & Website : \href{\yourWebsite}{abdullaharif.tech}
+%     \href{https://www.linkedin.com/in/\linkedInUserName}{LinkedIn://\linkedInUserName} & Website : \href{\yourWebsite}{abdullaharif.tech}
 %     \\
 % \end{tabular*}
 % \smallSep
@@ -35,11 +51,9 @@
     \href{https://github.com/\githubUserName}{\underline{github/\githubUserName}}
 \end{center}
 
-%---------------------------------------
-%
+%--------------------------------------------------------------
 %     Experience
-%
-%---------------------------------------
+%--------------------------------------------------------------
 \section{Work Experience}
 \resumeHeading{Amazon}{Software Development Engineer Intern}{Toronto, ON}{May 2020 – Aug 2020}
 \begin{tightemize}
@@ -50,6 +64,15 @@
     \item Thoroughly tested the project and implemented all required features. As a result, the tool was pushed to production, which surpassed the internship goal of reaching the beta stage.
 \end{tightemize}
 \sectionsep
+
+\resumeHeading{University of Windsor}{Research Assistant (RA)}{Windsor, ON}{Feb 2020 - May 2020}
+\begin{tightemize}
+    \item Developed an online Personal Health Record system in \semiBold{\href{https://spring.io/}{Spring.}}
+    \item Applied a
+    \href{https://link.springer.com/chapter/10.1007/978-3-642-10838-9\_23}{mCP-ABE} scheme to ensure secure fine-grained access control of patient's health records using the \href{http://gas.dia.unisa.it/projects/jpbc/}{JPBC} library
+\end{tightemize}
+\sectionsep
+
 \resumeHeading{JoaTu}{Software Engineer Intern}{Montreal, QC}{Dec 2018 – May 2019}
 \begin{tightemize}
     \item Migrated legacy \semiBold{Django code} to \semiBold{Ruby in Rails.}
@@ -57,39 +80,21 @@
 \end{tightemize}
 \sectionsep
 
-%
+%--------------------------------------------------------------
 %     Education
-%
-%---------------------------------------
+%--------------------------------------------------------------
 \section{Education}
+\educationHeading{University of Windsor}{BSc. Computer Science with Software Engineering Specialization}{Windsor, ON}{Jun 2021}
 
-\runsubsection{University of Windsor}\hfill\location{Jun 2021}\\
-\descript{BSc. Computer Science with Software Engineering Specialization}\hfill\location{Windsor, ON}\\
-\smallSep
+\teacherAssistant{World Wide Web Information Systems Development}
 
-\resumeSubheading{Research Assistant (RA)}{Feb 2020 - May 2020}
-\begin{tightemize}
-    \item Developed an online Personal Health Record system in \semiBold{\href{https://spring.io/}{Spring.}}
-    \item Applied a
-    \href{https://link.springer.com/chapter/10.1007/978-3-642-10838-9\_23}{mCP-ABE} scheme to ensure secure fine-grained access control of patient's health records using the \href{http://gas.dia.unisa.it/projects/jpbc/}{JPBC} library
-\end{tightemize}
-
-\smallSep
-\resumeSubheading{Teacher Assistant (TA)}{Jan 2021 - Apr 2021}
-\begin{tightemize}
-    \item Grade assignment for the course (World Wide Web Information Systems Development)
-    \item Guided students to develop their understanding of web-development concepts
-\end{tightemize}
-
-% \smallSep
-% \courseWork{Data Structures and Algorithms; Operating Systems;  Computer Security; Software Testing; Advanced Networking; Big Data Analytics}
-
+\courseWork{Data Structures and Algorithms; Operating Systems;  Computer Security; Software Testing; Advanced Networking; Big Data Analytics}s
+   
 \sectionsep
-%---------------------------------------
-%
+
+%--------------------------------------------------------------
 %     Projects
-%
-%---------------------------------------
+%--------------------------------------------------------------
 \section{Projects}
 
 \Project{Automated Spear-Phisher}{https://github.com/Aarif123456/Fb-Twitter-gui}
@@ -102,7 +107,6 @@ A security research tool to send targeted spam messages on either Facebook or Tw
 A full-stack image repository, where users can store their files. Created a GCP cloud function to implement \href{https://www.cs.utexas.edu/~bwaters/publications/papers/cp-abe.pdf}{CP-ABE} encryption and used it to ensure files are secure at rest.\\
 \sectionsep
   
-
 \Project{Biometric Dynamic Keystroke Spoofer}{https://github.com/Aarif123456/KeystrokeDynamicsSpoofer}
 \descript{Python, Object-Oriented Design, CyberSecurity}\\
 A program that authenticates users based on their typing patterns. And a spoofer that uses the genetic algorithm to mimic the user's typing pattern.\\
@@ -117,32 +121,29 @@ A capture-the-flag-styled shooting game composed of AI-controlled players. The a
 \descript{ PHP, JavaScript, HTML, CSS, MySQL}\\
 A full-stack library management system, where users can manage books and holds on their accounts. Users can also search the library\textquotesingle{}s catalogue, which has every book mentioned in the Harry Potter series. The system distinguishes between different users. Such as librarians who can also check or return books on behalf of users.\\
 \sectionsep
-%---------------------------------------
-%
+
+%--------------------------------------------------------------
 %     Skills
-%
-%---------------------------------------
+%--------------------------------------------------------------
 \section{Skills}
 % \begin{resumeSkillList}
 %     \item{
-%         \location{Languages:} Java, C++, Python, C\#, PHP, JavaScript, TypeScript, HTML/CSS, Prolog, Bash, Racket
+%         \singleItem{Languages:}{Java, C++, Python, C\#, PHP, JavaScript, TypeScript, HTML/CSS, Prolog, Bash}
 %         \\
-%         \location{Technology:} Git, React, AWS, GCP, Azure, Docker, Unity, Apache, \LaTeX
+%         \singleItem{Technology:}{Git, React, AWS, GCP, Azure, Docker, Unity, Apache, \LaTeX}
 %         \\
-%         \location{Databases:} SQL, MongoDB, Neo4j, DynamoDB
+%         \singleItem{Databases:}{SQL, MongoDB, Neo4j, DynamoDB}
 %     }
 % \end{resumeSkillList}
 
 %  A more concise alternate 
 \begin{resumeSkillList}
     \small{\item{
-    \location{Languages:} Java, C++, Python, C\#, PHP, Prolog, C, Racket
-    \hspace*{\fill} 
-    \location{Web Development:}J avaScript, React, CSS, HTML
+    \doubleItem{Languages:}{Java, C++, Python, C\#, PHP, Prolog, C, Racket}%
+    {Web Development:}{JavaScript, React, CSS, HTML}
     \\
-    \location{Technology:} Git, AWS, GCP, Azure, Docker, Unity, Apache, \LaTeX
-    \hspace*{\fill} 
-    \location{Databases:} SQL (PostGres), MongoDB, Neo4j
+    \doubleItem{Technology:}{Git, AWS, GCP, Azure, Docker, Unity, Apache, \LaTeX}%
+    {Databases:}{SQL (PostGres), MongoDB, Neo4j}
     }}
 \end{resumeSkillList}
 \end{document}
