@@ -2,7 +2,7 @@
 \ProvidesClass{resume-openfont}[2021/05/30 Abdullah's version]
 \NeedsTeXFormat{LaTeX2e}
 \DeclareOption{print}{\def\@cv@print{}}
-\DeclareOption*{ 
+\DeclareOption*{%
     \PassOptionsToClass{\CurrentOption}{article}
 }
 \ProcessOptions\relax
@@ -11,10 +11,12 @@
 %--------------------------------------------------------------
 % Package Imports
 \RequirePackage[english]{babel}
+% page setup 
+\RequirePackage{fancyhdr}
 % Set boundaries
 \RequirePackage[hmargin=1cm, vmargin=0.94cm]{geometry}
 % remove ugly boxes around links
-\RequirePackage[hidelinks]{hyperref}
+\usepackage[hidelinks]{hyperref}
 % setup custom titles
 \RequirePackage{titlesec}
 % For skills table
@@ -24,8 +26,8 @@
 % Used for the link symbol
 \RequirePackage{fontawesome}
 % Set up font 
-\RequirePackage{local-font}
-
+\RequirePackage{lato-font}
+\RequirePackage{raleway-font}
 %--------------------------------------------------------------
 % Reformatting default sections
 % section
@@ -33,8 +35,8 @@
 \titleformat{\section}{%
 \color{headings}% Using comments to allow us to split the command across multiple line
 \scshape%
-\customMedium%
-\fontsize{16pt}{20pt}%first number is size, second number is space between lines
+\customLatoLight%
+\fontsize{16pt}{24pt}%first number is size, second number is space between lines
 \selectfont%
 \raggedright%
 \uppercase%
@@ -44,7 +46,7 @@
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 \titleformat{\subsection}{%
 \color{subheadings}%
-\customMedium%
+\customLatoBlack%
 \fontsize{12pt}{12pt}%
 \selectfont%
 \bfseries%
@@ -52,6 +54,13 @@
 \normalfont% Normal font is used to reset the customization, so it doesn't bleed into anything else
 } {}{0em}{}
 
+% remove header footer stuff like page numbers 
+\newcommand{\resetHeaderAndFooter}{%
+\fancyhf{}%
+\fancyfoot{}%
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\footrulewidth}{0pt}%
+}
 %--------------------------------------------------------------
 % Formatting commands - commands to control spacing
 
@@ -72,11 +81,11 @@
 % Subheadings command - create different types of heading
 \newcommand{\runsubsection}[1]{%
 \color{subheadings}%
-\customMedium%
+\customLatoBlack%
 \fontsize{12pt}{12pt}%
 \selectfont%
 \bfseries%
-\uppercase{#1}%
+#1%
 \normalfont}%
 
 % Descriptors command
@@ -84,7 +93,7 @@
 \color{subheadings}%
 \raggedright%
 \scshape%
-\customMedium%
+\customRalewayMedium%
 \fontsize{11pt}{13pt}%
 \selectfont{#1}%
 \normalfont}
@@ -93,7 +102,7 @@
 \newcommand{\location}[1]{%
 \color{headings}%
 \raggedright%
-\customMedium%
+\customRalewayMedium%
 \fontsize{11pt}{13pt}%
 \selectfont{#1}%
 \normalfont}
@@ -103,28 +112,27 @@
 \color{subheadings}%
 \raggedright%
 \scshape%
-\customMedium%
+\customRalewayMedium%
 \fontsize{11pt}{12pt}%
 \selectfont{#1}%
 \normalfont}
 
 % Project command
-\newcommand{\Project}[2]{\runsubsection{%
-    \lowercase{\href{#2}}{#1 \,\faExternalLink}
-    }
+\newcommand{\Project}[2]{\uppercase{%
+\runsubsection{%
+\lowercase{\href{#2}}{#1 \,\faExternalLink}
+}
+}
     \hfill
 }
 
 % Command for table 
-\newcommand{\singleItem}[2]{\location{#1} #2}
-\newcommand{\doubleItem}[4]{\singleItem{#1}{#2}\hspace*{\fill} \singleItem{#3}{#4}}
+\newcommand{\singleItem}[2]{\normalsize{\textbf{#1} #2}}
+\newcommand{\doubleItem}[4]{\singleItem{#1}{#2} & \singleItem{#3}{#4}}
 
 %--------------------------------------------------------------
 % Section separators command
-\newcommand{\sectionsep}[0]{\vspace*{6pt}}
-
-% small separators command
-\newcommand{\smallSep}[0]{\vspace*{3pt}}
+\newcommand{\sectionsep}[0]{\vspace{7pt}}
 
 %--------------------------------------------------------------
 % Bullet Lists with fewer gaps command
@@ -140,11 +148,12 @@
     }
 
 % Command for skill table
-\newenvironment{resumeSkillList}{
-       \begin{itemize}[leftmargin=0.07cm, label={}]
-    }{
-        \end{itemize}
-    }
+\newenvironment{resumeSkillList}{%
+\noindent%
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%
+}{%
+\end{tabular*}%
+}
 
 %--------------------------------------------------------------
 % Customize built-in commands
