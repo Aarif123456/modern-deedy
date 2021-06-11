@@ -118,10 +118,9 @@
 \normalfont}
 
 % Project command
-\newcommand{\Project}[2]{\uppercase{%
+\newcommand{\Project}[2]{
 \runsubsection{%
-\lowercase{\href{#2}}{#1 \,\faExternalLink}
-}
+\href{#2}{\uppercase{#1} \,\faExternalLink}
 }
     \hfill
 }
