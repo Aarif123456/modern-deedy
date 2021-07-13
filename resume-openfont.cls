@@ -125,6 +125,11 @@
     \hfill
 }
 
+% Underlined link command
+\newcommand{\underlinedLink}[2]{%
+\underline{\href{#1}{#2}}%
+}
+
 % Command for table 
 \newcommand{\singleItem}[2]{\normalsize{\textbf{#1} #2}}
 \newcommand{\doubleItem}[4]{\singleItem{#1}{#2} & \singleItem{#3}{#4}}
@@ -135,7 +140,7 @@
 
 %--------------------------------------------------------------
 % Bullet Lists with fewer gaps command
-\newenvironment{tightemize}{
+\newenvironment{bullets}{
     \vspace{-1mm}
     \begin{itemize}
     \itemsep1pt 
@@ -147,7 +152,7 @@
     }
 
 % Command for skill table
-\newenvironment{resumeSkillList}{%
+\newenvironment{skillList}{%
 \noindent%
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%
 }{%
