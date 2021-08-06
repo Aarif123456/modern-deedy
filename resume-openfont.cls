@@ -28,6 +28,8 @@
 % Set up font 
 \RequirePackage{lato-font}
 \RequirePackage{raleway-font}
+% make underlying constants: credits to Alex Beattie for noticing and suggesting fix
+\RequirePackage{ulem}
 %--------------------------------------------------------------
 % Reformatting default sections
 % section
@@ -127,7 +129,7 @@
 
 % Underlined link command
 \newcommand{\underlinedLink}[2]{%
-\underline{\href{#1}{#2}}%
+\uline{\href{#1}{#2}}%
 }
 
 % Command for table 
@@ -141,15 +143,15 @@
 %--------------------------------------------------------------
 % Bullet Lists with fewer gaps command
 \newenvironment{bullets}{
-    \vspace{-1mm}
-    \begin{itemize}
-    \itemsep1pt 
-    \parskip1.5pt 
-    \parsep1.5pt
-    }{
-        \end{itemize}
-        \vspace{-\topsep}
-    }
+\vspace{-1mm}
+\begin{itemize}
+\itemsep1pt 
+\parskip1.5pt 
+\parsep1.5pt
+}{
+\end{itemize}
+\vspace{-\topsep}
+}
 
 % Command for skill table
 \newenvironment{skillList}{%
@@ -164,3 +166,4 @@
 % Align Sections
 \let\oldSection\section
 \renewcommand{\section}[1]{\oldSection{#1}\raggedright}
+\renewcommand{\underline}[1]{\uline{#1}}
