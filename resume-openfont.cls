@@ -129,7 +129,7 @@
 
 % Underlined link command
 \newcommand{\underlinedLink}[2]{%
-\uline{\href{#1}{#2}}%
+\href{#1}{\uline{#2}}%
 }
 
 % Command for table 
