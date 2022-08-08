@@ -32,7 +32,9 @@ Step 2
 
 ## API details :gear:
 
-If you want to change the font just download the fonts and move the unzipped folder to the fonts folder. Then go to local-font.sty and change the font name and folder at the top folder. You can crtl+f `\newcommand{\fontFolder}` to find it faster.
+If you want to change the font just [download the fonts](https://fonts.google.com) and move the unzipped folder to the fonts folder. Then open lato-font.sty and crtl+f `\newcommand{\fontFolder}`. Change the font name and folder to your preferred font style. By default it is lato (see image below), but you can change it to the font of your choice.
+
+![image](https://user-images.githubusercontent.com/62230055/183369073-3cf6eff7-fd5a-4dde-8605-d52787e85cb8.png)
 
 ## Resume Tips :books:
 
